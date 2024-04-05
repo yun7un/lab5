@@ -67,47 +67,6 @@ async function fetch100PokemonDetails() {
 }
 
 
-/* Option 1 
-function renderOption1Results(data) {
-  const card = createCardElement({
-    title: data.name,
-    subtitle: data.types.map((type) => type.type.name).join(", "),
-    image: data.sprites.other["official-artwork"].front_default,
-  });
-  document.getElementById("option-1-results").innerHTML = card;
-}
-
-async function option1DropdownClickHandler(event) {
-  const select = document.getElementById("dropdown");
-  const url = select.options[select.selectedIndex].value;
-  const data = await fetchPokemonDetails(url);
-  if (data) {
-    renderOption1Results(data);
-  }
-}
-
-/* Attach an event listener to the submit button for the Option 1 dropdown list. 
-const option1SubmitButton = document.getElementById("submit-button");
-option1SubmitButton.addEventListener("click", option1DropdownClickHandler);
-
-/* Populate the dropdown list with pokemon names and their endpoint urls. 
-async function renderOption1Dropdown() {
-  const select = document.getElementById("dropdown");
-  const list = await fetch100PokemonList();
-  if (list) {
-    list.forEach((item) => {
-      const option = document.createElement("option");
-      option.textContent = item.name;
-      option.value = item.url;
-      select.appendChild(option);
-    });
-  }
-}
-
-renderOption1Dropdown();
-
-
-
 /* Option 2 */
 
 async function renderOption2() {
